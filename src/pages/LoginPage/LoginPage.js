@@ -1,7 +1,9 @@
+import { LoginForm } from 'features';
+
 export const LoginPage = () => {
   return (
     <div>
-      страница для логина
+      <LoginForm />
     </div>
   )
 };

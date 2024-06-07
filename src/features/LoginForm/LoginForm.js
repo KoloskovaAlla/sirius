@@ -7,7 +7,19 @@ import {
   Button,
 } from 'shared/ui';
 
-export const LoginForm = () => {
+export const LoginForm = ({ formOptions}) => {
+  const {
+    emailOptions,  
+    passwordOptions,
+    checkboxOptions,
+    enterOptions,
+  } = formOptions;
+
+  const {
+    handleFormSubmit,
+    isSubmitDisabled,
+  } = enterOptions;
+
   return (
     <form>
       {emailOptions && (
