@@ -7,18 +7,29 @@ import {
   Button,
 } from 'shared/ui';
 
+/**
+ * @typedef {import('./types').FormProps} FormProps
+ * @typedef {import('react').ReactElement} Element
+ */
+
+/**
+ * @function LoginForm
+ * @param {FormProps} props
+ * @returns {Element}
+ */
+
 export const LoginForm = ({ formOptions}) => {
   const {
     emailOptions,  
     passwordOptions,
     checkboxOptions,
-    enterOptions,
+    submitOptions,
   } = formOptions;
 
   const {
     handleFormSubmit,
     isSubmitDisabled,
-  } = enterOptions;
+  } = submitOptions;
 
   return (
     <form>
