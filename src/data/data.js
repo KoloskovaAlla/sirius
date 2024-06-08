@@ -3,13 +3,13 @@ export const mocData = {
     "buttonText": "Подтвердить",
     "inputEmail": {
       "name": "email",
-      "placeholder": "example@example.ru",
+      "placeholder": "E-mail",
       "type": "email\"",
       "invalidMessage": "Введена некорректная почта"
     },
     "inputPassword": {
       "name": "password",
-      "placeholder": "********",
+      "placeholder": "Пароль",
       "type": "password\"",
       "invalidMessage": "Пароль не соответствует формату"
     },

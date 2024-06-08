@@ -43,9 +43,9 @@ export const LoginForm = () => {
   };
 
   return (
-    <form>
+    <form className={classes.form}>
       {/* <label className={className}> */}
-      <label>
+      <label className={classes.email}>
         <input
           type="text"
           placeholder={formState?.formData?.inputEmail.placeholder}
@@ -56,7 +56,7 @@ export const LoginForm = () => {
         {/* {!isValidField && <span>{invalidMessage}</span>} */}
       </label>
 
-      <label>
+      <label className={classes.password}>
         <input
           type="text"
           placeholder={formState?.formData?.inputPassword.placeholder}
