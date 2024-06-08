@@ -33,12 +33,8 @@ export const LoginForm = () => {
   //   isSubmitDisabled,
   // } = submitOptions;
 
-  useEffect(() => {
-    console.log(formState?.formData?.inputEmail);
-  }, [formState]);
-
   const onPasswordChange = ({ target: { value } }) => {
-    dispatch(formState.orderActions.setName(value));
+    dispatch(formState.formActions.setPassword(value));
     // dispatch(formState.orderActions.setIsValidasworde(validatePassword(value)));
   };
 
