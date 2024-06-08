@@ -16,10 +16,10 @@ import { formActions, getForm } from 'shared/reducers/formSlice';
  */
 const getState = (store) => store.formReducer;
 
-/**
- * @function useForm
- * @returns {FormState}
- */
+// /**
+//  * @function useForm
+//  * @returns {FormState}
+//  */
 
 export const useForm = () => {
   const dispatch = useDispatch();
