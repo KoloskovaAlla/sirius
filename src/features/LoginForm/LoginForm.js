@@ -1,4 +1,4 @@
-import classes from './Form.module.scss';
+import classes from './LoginForm.module.scss';
 
 import { TextField } from 'entity';
 
