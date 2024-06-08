@@ -31,6 +31,10 @@ export const useForm = () => {
   // }, [isModalActive]);
 
   useEffect(() => {
+    console.log(state.password);
+  }, [state]);
+
+  useEffect(() => {
     const isFormDataValid = state.isValidEmail && state.isValidPassword 
     dispatch(formActions.setIsSubmitDisabled(!isFormDataValid));
   }, [dispatch, state]);

@@ -7,6 +7,12 @@ export const mocData = {
       "type": "email\"",
       "invalidMessage": "Введена некорректная почта"
     },
+    "inputPassword": {
+      "name": "password",
+      "placeholder": "********",
+      "type": "password\"",
+      "invalidMessage": "Пароль не соответствует формату"
+    },
     "inputName": {
       "name": "name",
       "placeholder": "Имя",

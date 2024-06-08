@@ -27,19 +27,15 @@ const getForm = createAsyncThunk(
  */
 
 const initialState = {
-  isModalActive: false,
+ 
   isLoading: false,
   /** @type {null | RegistrationData} */
   formData: null,
-  errorMessage: '',
-  name: '',
-  isValidName: false,
-  surname: '',
-  isValidSurname: false,
-  tel: '',
-  isValidTel: false,
+  errorMessage: '',  
   email: '',
   isValidEmail: false,
+  password: '',
+  isValidPassword: false,
   isSubmitDisabled: true, 
 };
 
@@ -48,29 +44,17 @@ export const formSlice = createSlice({
   initialState,
 
   reducers: {   
-    setName: (state, { payload }) => {
-      state.name = payload;
-    },
-    setIsValidName: (state, { payload }) => {
-      state.isValidName = payload;
-    },
-    setSurname: (state, { payload }) => {
-      state.surname = payload;
-    },
-    setIsValidSurname: (state, { payload }) => {
-      state.isValidSurname = payload;
-    },
-    setTel: (state, { payload }) => {
-      state.tel = payload;
-    },
-    setIsValidTel: (state, { payload }) => {
-      state.isValidTel = payload;
-    },
     setEmail: (state, { payload }) => {
       state.email = payload;
     },
     setIsValidEmail: (state, { payload }) => {
       state.isValidEmail = payload;
+    },
+    setPassword: (state, { payload }) => {
+      state.password = payload;
+    },
+    setIsValidPassword: (state, { payload }) => {
+      state.isValidPassword = payload;
     },
     setIsSubmitDisabled: (state, { payload }) => {
       state.isSubmitDisabled = payload;

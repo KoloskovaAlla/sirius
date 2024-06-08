@@ -33,23 +33,35 @@ export const LoginForm = () => {
   //   isSubmitDisabled,
   // } = submitOptions;
 
-  useEffect(() => {
-    console.log(formState?.formData?.inputEmail);
-  }, [formState]);
+  const onPasswordChange = ({ target: { value } }) => {
+    dispatch(formState.formActions.setPassword(value));
+    // dispatch(formState.orderActions.setIsValidasworde(validatePassword(value)));
+  };
 
   return (
     <form>
-         {/* <label className={className}> */}
-         <label>
-  <input
-    type="text"
-    placeholder={formState?.formData?.inputEmail.placeholder}
-    value={formState?.formData?.value}
-    onChange={formState?.formData?.onChange}
-  />
+      {/* <label className={className}> */}
+      <label>
+        <input
+          type="text"
+          placeholder={formState?.formData?.inputEmail.placeholder}
+          value={formState?.formData?.value}
+          onChange={formState?.formData?.onChange}
+        />
 
-      {/* {!isValidField && <span>{invalidMessage}</span>} */}
-    </label>
+        {/* {!isValidField && <span>{invalidMessage}</span>} */}
+      </label>
+
+      <label>
+        <input
+          type="text"
+          placeholder={formState?.formData?.inputPassword.placeholder}
+          value={formState?.formData?.inputEmail.password}
+          onChange={onPasswordChange}
+        />
+
+        {/* {!isValidField && <span>{invalidMessage}</span>} */}
+      </label>
 
       {/* {passwordOptions && (
         <TextField
