@@ -1,5 +1,7 @@
 import classes from './LoginForm.module.scss';
-
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useForm } from 'shared/hooks';
 import { TextField } from 'entity';
 
 import {
@@ -7,33 +9,42 @@ import {
   Button,
 } from 'shared/ui';
 
-/**
- * @typedef {import('./types').FormProps} FormProps
- * @typedef {import('react').ReactElement} Element
- */
+// /**
+//  * @typedef {import('./types').FormProps} FormProps
+//  * @typedef {import('react').ReactElement} Element
+//  */
 
-/**
- * @function LoginForm
- * @param {FormProps} props
- * @returns {Element}
- */
+// /**
+//  * @function LoginForm
+//  * @param {FormProps} props
+//  * @returns {Element}
+//  */
 
-export const LoginForm = ({ formOptions}) => {
-  const {
-    emailOptions,  
-    passwordOptions,
-    checkboxOptions,
-    submitOptions,
-  } = formOptions;
+export const LoginForm = () => {
+  const dispatch = useDispatch();
+  const formState = useForm();
 
-  const {
-    handleFormSubmit,
-    isSubmitDisabled,
-  } = submitOptions;
+    useEffect(() => {    
+    dispatch(formState.formActions.getForm());
+  }, [dispatch]);
+
+  // const {
+  //   emailOptions,  
+  //   passwordOptions,
+  //   checkboxOptions,
+  //   submitOptions,
+  // } = formOptions;
+
+  // const {
+  //   handleFormSubmit,
+  //   isSubmitDisabled,
+  // } = submitOptions;
+
+  useEffect(() => {}, []);
 
   return (
     <form>
-      {emailOptions && (
+      {/* {emailOptions && (
         <TextField
           className={classes.email}
           options={emailOptions}
@@ -55,7 +66,7 @@ export const LoginForm = ({ formOptions}) => {
         label='enter'
         content={'text'}
         disabled={isSubmitDisabled}
-      />
+      /> */}
     </form>
   );
 };

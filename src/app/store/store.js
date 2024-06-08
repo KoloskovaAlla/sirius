@@ -1,12 +1,12 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-// import {
-//   postsReducer, 
-// } from 'shared/reducers';
+import {
+  formReducer, 
+} from 'shared/reducers';
 
-// const rootReducer = combineReducers({
-//   langsReducer,
-// });
+const rootReducer = combineReducers({
+  formReducer,
+});
 
-// export const store = configureStore({
-//   reducer: rootReducer,
-// });
+export const store = configureStore({
+  reducer: rootReducer,
+});
