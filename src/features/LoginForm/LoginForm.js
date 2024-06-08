@@ -37,6 +37,11 @@ export const LoginForm = () => {
     console.log(formState?.formData?.inputEmail);
   }, [formState]);
 
+  const onPasswordChange = ({ target: { value } }) => {
+    dispatch(formState.orderActions.setName(value));
+    // dispatch(formState.orderActions.setIsValidasworde(validatePassword(value)));
+  };
+
   return (
     <form>
       {/* <label className={className}> */}
@@ -55,8 +60,8 @@ export const LoginForm = () => {
         <input
           type="text"
           placeholder={formState?.formData?.inputPassword.placeholder}
-          value={formState?.formData?.value}
-          onChange={formState?.formData?.onChange}
+          value={formState?.formData?.inputEmail.password}
+          onChange={onPasswordChange}
         />
 
         {/* {!isValidField && <span>{invalidMessage}</span>} */}
