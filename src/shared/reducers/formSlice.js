@@ -5,7 +5,7 @@ import { mocData } from 'data/data';
 const onGetForm = async (_, thunkAPI) => {
   try {
     const data = mocData;
-    console.log(data.form);
+    // console.log(data.form);
     if (data.message) throw new Error(data.message);
     return thunkAPI.fulfillWithValue(data.form);
   } catch (error) {
