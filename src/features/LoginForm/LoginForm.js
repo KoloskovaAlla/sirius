@@ -37,6 +37,10 @@ export const LoginForm = () => {
     dispatch(formState.formActions.setPassword(value));
     // dispatch(formState.orderActions.setIsValidasworde(validatePassword(value)));
   };
+  const onEmailChange = ({ target: { value } }) => {
+    dispatch(formState.formActions.setEmail(value));
+    // dispatch(formState.orderActions.setIsValidasworde(validatePassword(value)));
+  };
 
   return (
     <form>
@@ -46,7 +50,7 @@ export const LoginForm = () => {
           type="text"
           placeholder={formState?.formData?.inputEmail.placeholder}
           value={formState?.formData?.value}
-          onChange={formState?.formData?.onChange}
+          onChange={onEmailChange}
         />
 
         {/* {!isValidField && <span>{invalidMessage}</span>} */}
