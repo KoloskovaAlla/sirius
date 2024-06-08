@@ -29,28 +29,29 @@ export const LoginForm = () => {
   }, [dispatch]);
 
   // const {
-  //   emailOptions,  
-  //   passwordOptions,
-  //   checkboxOptions,
-  //   submitOptions,
-  // } = formOptions;
-
-  // const {
   //   handleFormSubmit,
   //   isSubmitDisabled,
   // } = submitOptions;
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    console.log(formState?.formData?.inputEmail);
+  }, [formState]);
 
   return (
     <form>
-      {/* {emailOptions && (
-        <TextField
-          className={classes.email}
-          options={emailOptions}
-        />
-      )}
-      {passwordOptions && (
+         {/* <label className={className}> */}
+         <label>
+  <input
+    type="text"
+    placeholder={formState?.formData?.inputEmail.placeholder}
+    value={formState?.formData?.value}
+    onChange={formState?.formData?.onChange}
+  />
+
+      {/* {!isValidField && <span>{invalidMessage}</span>} */}
+    </label>
+
+      {/* {passwordOptions && (
         <TextField
           className={classes.password}
           options={passwordOptions}
@@ -66,7 +67,7 @@ export const LoginForm = () => {
         label='enter'
         content={'text'}
         disabled={isSubmitDisabled}
-      /> */}
+      />  */}
     </form>
   );
 };
