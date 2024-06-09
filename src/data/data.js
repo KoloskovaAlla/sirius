@@ -7,6 +7,9 @@ export const mocData = {
       "type": "email\"",
       "invalidMessage": "Введена некорректная почта"
     },
+    "inputIsRemember": {
+      "content": "Запомнить меня"
+    },
     "inputPassword": {
       "name": "password",
       "placeholder": "Пароль",
@@ -18,18 +21,6 @@ export const mocData = {
       "placeholder": "Имя",
       "type": "text",
       "invalidMessage": "Введено некорректное имя"
-    },
-    "inputSurname": {
-      "name": "surname",
-      "placeholder": "Фамилия",
-      "type": "text",
-      "invalidMessage": "Введена некорректная фамилия"
-    }, 
-    "inputTel": {
-      "name": "tel",
-      "placeholder": "+71234567890",
-      "type": "tel",
-      "invalidMessage": "Некорретный номер"
     },
     "title": {
       "content": "Регистрация аккаунта",

@@ -4,11 +4,6 @@ import { useDispatch } from 'react-redux';
 import { useForm } from 'shared/hooks';
 import { TextField } from 'entity';
 
-import {
-  Checkbox,
-  Button,
-} from 'shared/ui';
-
 // /**
 //  * @typedef {import('./types').FormProps} FormProps
 //  * @typedef {import('react').ReactElement} Element
@@ -33,6 +28,10 @@ export const LoginForm = () => {
   //   isSubmitDisabled,
   // } = submitOptions;
 
+  useEffect(() => {
+    console.log(formState?.formData);
+  }, [formState]);
+
   const onPasswordChange = ({ target: { value } }) => {
     dispatch(formState.formActions.setPassword(value));
     // dispatch(formState.orderActions.setIsValidasworde(validatePassword(value)));
@@ -40,6 +39,10 @@ export const LoginForm = () => {
   const onEmailChange = ({ target: { value } }) => {
     dispatch(formState.formActions.setEmail(value));
     // dispatch(formState.orderActions.setIsValidasworde(validatePassword(value)));
+  };
+
+  const handleCheckboxChange = () => {
+    dispatch(formState.formActions.setIsChecked(!formState.isChecked));
   };
 
   return (
@@ -66,24 +69,17 @@ export const LoginForm = () => {
 
         {/* {!isValidField && <span>{invalidMessage}</span>} */}
       </label>
-
-      {/* {passwordOptions && (
-        <TextField
-          className={classes.password}
-          options={passwordOptions}
+  
+      <label className={classes.remember}>       
+        <input
+          type={'checkbox'}
+          checked={formState.isChecked}
+          onChange={handleCheckboxChange}
         />
-      )}
-      <label className={classes.remeber}>
-        <Checkbox
-          options={checkboxOptions}
-        />   
+        <span>
+          {formState?.formData?.inputIsRemember?.content}
+        </span>
       </label>
-      <Button
-        className={classes.eneter}
-        label='enter'
-        content={'text'}
-        disabled={isSubmitDisabled}
-      />  */}
     </form>
   );
 };
