@@ -37,6 +37,7 @@ const initialState = {
   password: '',
   isValidPassword: false,
   isSubmitDisabled: true, 
+  isChecked: false,
 };
 
 export const formSlice = createSlice({
@@ -58,6 +59,9 @@ export const formSlice = createSlice({
     },
     setIsSubmitDisabled: (state, { payload }) => {
       state.isSubmitDisabled = payload;
+    },  
+    setIsChecked: (state, { payload }) => {
+      state.isChecked = payload;
     },  
   },
   extraReducers(builder) {

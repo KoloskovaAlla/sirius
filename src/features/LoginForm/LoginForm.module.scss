@@ -19,7 +19,6 @@
   }
   
   & input {
-    font-family: 'Nunito', sans-serif; 
     font-family: 'Circe Rounded', sans-serif;
     display: block;
     width: 100%;
@@ -38,4 +37,15 @@
 
 .password {
   margin-top: 12px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+
+  & span {
+    margin-left: 5px;
+    
+  }
 }
