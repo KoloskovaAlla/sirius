@@ -1,4 +1,6 @@
+import classes from './LoginPage.module.scss';
 import { LoginForm } from 'features';
+import { Header } from 'widgets';
 
 /**
  * @function LoginPage
@@ -7,7 +9,8 @@ import { LoginForm } from 'features';
 
 export const LoginPage = () => {
   return (
-    <div>
+    <div className={classes.loginpage}>
+      <Header />
       <LoginForm />
     </div>
   )
