@@ -1,11 +1,10 @@
 import classes from './LoginForm.module.scss';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useForm } from 'shared/hooks';
+import { useForm, useLang } from 'shared/hooks';
 import { TextField } from 'entity';
 import { useNavigate } from 'react-router-dom';
 import { IconPasswordVisible, IconPasswordHidden } from 'shared/icons'; // Импортируем обе иконки
-
 import { validateEmail } from 'shared/utils';
 
 // /**
@@ -24,14 +23,11 @@ export const LoginForm = () => {
   const formState = useForm();
   const navigate = useNavigate();
   const [isPasswordVisible, setPasswordVisible] = useState(false);
+  const { lang } = useLang();
 
   useEffect(() => {
     dispatch(formState.formActions.getForm());
-  }, [dispatch]);
-
-  useEffect(() => {
-    console.log(formState?.isPasswordVisible);
-  }, [formState]);
+  }, [dispatch, lang]);
 
   const onEmailChange = ({ target: { value } }) => {
     dispatch(formState.formActions.setEmail(value));

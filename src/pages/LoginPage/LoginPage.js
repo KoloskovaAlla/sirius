@@ -1,5 +1,5 @@
 import classes from './LoginPage.module.scss';
-import { LoginForm } from 'features';
+import { LoginForm, Lang } from 'features';
 import { Header } from 'widgets';
 
 /**
@@ -12,6 +12,7 @@ export const LoginPage = () => {
     <div className={classes.loginpage}>
       <Header />
       <LoginForm />
+      <Lang />
     </div>
   )
 };
