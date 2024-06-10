@@ -5,6 +5,10 @@ import { useForm } from 'shared/hooks';
 import { TextField } from 'entity';
 import { useNavigate } from 'react-router-dom';
 
+import {
+  validateEmail,
+} from 'shared/utils';
+
 // /**
 //  * @typedef {import('./types').FormProps} FormProps
 //  * @typedef {import('react').ReactElement} Element
@@ -31,15 +35,16 @@ export const LoginForm = () => {
   // } = submitOptions;
 
   useEffect(() => {
-    console.log(formState?.formData);
+    console.log(formState.isValidEmail);
   }, [formState]);
+
+  const onEmailChange = ({ target: { value } }) => {
+    dispatch(formState.formActions.setEmail(value));
+    dispatch(formState.formActions.setIsValidEmail(validateEmail(value)));
+  };
 
   const onPasswordChange = ({ target: { value } }) => {
     dispatch(formState.formActions.setPassword(value));
-    // dispatch(formState.orderActions.setIsValidasworde(validatePassword(value)));
-  };
-  const onEmailChange = ({ target: { value } }) => {
-    dispatch(formState.formActions.setEmail(value));
     // dispatch(formState.orderActions.setIsValidasworde(validatePassword(value)));
   };
 
@@ -63,14 +68,14 @@ export const LoginForm = () => {
           onChange={onEmailChange}
         />
 
-        {/* {!isValidField && <span>{invalidMessage}</span>} */}
+        {!formState.isValidEmail && <span>{formState?.formData?.inputEmail.invalidMessage}</span>}
       </label>
 
       <label className={classes.password}>
         <input
           type="text"
           placeholder={formState?.formData?.inputPassword.placeholder}
-          value={formState?.formData?.inputEmail.password}
+          value={formState?.formData?.inputPassword.password}
           onChange={onPasswordChange}
         />
 

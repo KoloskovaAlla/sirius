@@ -27,16 +27,16 @@ const getForm = createAsyncThunk(
  */
 
 const initialState = {
- 
+
   isLoading: false,
   /** @type {null | RegistrationData} */
   formData: null,
-  errorMessage: '',  
+  errorMessage: '',
   email: '',
-  isValidEmail: false,
+  isValidEmail: true,
   password: '',
   isValidPassword: false,
-  isSubmitDisabled: true, 
+  isSubmitDisabled: true,
   isChecked: false,
 };
 
@@ -44,7 +44,7 @@ export const formSlice = createSlice({
   name: 'form',
   initialState,
 
-  reducers: {   
+  reducers: {
     setEmail: (state, { payload }) => {
       state.email = payload;
     },
@@ -59,10 +59,10 @@ export const formSlice = createSlice({
     },
     setIsSubmitDisabled: (state, { payload }) => {
       state.isSubmitDisabled = payload;
-    },  
+    },
     setIsChecked: (state, { payload }) => {
       state.isChecked = payload;
-    },  
+    },
   },
   extraReducers(builder) {
     builder
