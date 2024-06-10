@@ -1,6 +1,6 @@
 // @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
 
-.form   {
+.form {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -9,15 +9,16 @@
   max-width: 340px;
 }
 
-.email, .password {
+.email,
+.password {
   display: block;
   margin-top: 15px;
-  height: 30px; 
-  
+  height: 30px;
+
   &:first-of-type {
     margin-top: 0;
   }
-  
+
   & input {
     font-family: 'Circe Rounded', sans-serif;
     display: block;
@@ -46,6 +47,20 @@
 
   & span {
     margin-left: 5px;
-    
+
+  }
+}
+
+.submit {
+  margin-top: 20px;
+  border-radius: 30px;
+  height: 40px;
+  width: 100%;
+  color: #fff;
+  background: #8D7FC7;
+  font-size: 18px;
+
+  &:disabled {
+    opacity: 0.5
   }
 }

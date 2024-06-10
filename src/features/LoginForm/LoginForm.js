@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useForm } from 'shared/hooks';
 import { TextField } from 'entity';
+import { useNavigate } from 'react-router-dom';
 
 // /**
 //  * @typedef {import('./types').FormProps} FormProps
@@ -18,8 +19,9 @@ import { TextField } from 'entity';
 export const LoginForm = () => {
   const dispatch = useDispatch();
   const formState = useForm();
+  const navigate = useNavigate();
 
-    useEffect(() => {    
+  useEffect(() => {
     dispatch(formState.formActions.getForm());
   }, [dispatch]);
 
@@ -43,6 +45,11 @@ export const LoginForm = () => {
 
   const handleCheckboxChange = () => {
     dispatch(formState.formActions.setIsChecked(!formState.isChecked));
+  };
+
+  const onClickButton = (event) => {
+    event.preventDefault();
+    navigate('/shedulepage'); // Replace '/target-page' with your desired route
   };
 
   return (
@@ -69,8 +76,8 @@ export const LoginForm = () => {
 
         {/* {!isValidField && <span>{invalidMessage}</span>} */}
       </label>
-  
-      <label className={classes.remember}>       
+
+      <label className={classes.remember}>
         <input
           type={'checkbox'}
           checked={formState.isChecked}
@@ -80,6 +87,14 @@ export const LoginForm = () => {
           {formState?.formData?.inputIsRemember?.content}
         </span>
       </label>
+      <button
+        onClick={onClickButton}
+        className={classes.submit}
+        // disabled={disabled}
+        type="submit"
+      >
+        {'Войти'}
+      </button>
     </form>
   );
 };
