@@ -11,11 +11,11 @@ import { mocData } from 'data/data';
  */
 
 const initialState = {
-  lang: localStorage.getItem('lang') ?? 'ru',
+  lang: 'ru',
 };
 
 const langsSlice = createSlice({
-  name: 'langs',
+  name: 'lang',
   initialState,
   reducers: {
     setLang: (state, { payload }) => {
@@ -23,6 +23,5 @@ const langsSlice = createSlice({
     },
   },
 });
-
 export const { reducer: langsReducer } = langsSlice;
 export const { setLang } = langsSlice.actions;

@@ -1,5 +1,30 @@
 export const mocData = {
-  "form": {
+  "en": {
+     "form": {
+    "buttonText": "Login",
+    "inputEmail": {
+      "name": "email",
+      "placeholder": "E-mail",
+      "type": "email\"",
+      "invalidMessage": "Incorrect email"
+    },
+    "inputIsRemember": {
+      "content": "Remeber me"
+    },
+    "inputPassword": {
+      "name": "password",
+      "placeholder": "Password",
+      "type": "password\"",
+      "invalidMessage": "Пароль не соответствует формату"
+    },
+
+    "title": {
+      "content": "Registration",
+      "priority": 3
+    }
+  },
+  },
+  "ru": { "form": {
     "buttonText": "Подтвердить",
     "inputEmail": {
       "name": "email",
@@ -15,16 +40,10 @@ export const mocData = {
       "placeholder": "Пароль",
       "type": "password\"",
       "invalidMessage": "Пароль не соответствует формату"
-    },
-    "inputName": {
-      "name": "name",
-      "placeholder": "Имя",
-      "type": "text",
-      "invalidMessage": "Введено некорректное имя"
-    },
+    }, 
     "title": {
       "content": "Регистрация аккаунта",
       "priority": 3
     }
-  },
+  },} 
 }

@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-// import { API_BASE_URL } from 'shared/constants/api';
 import { mocData } from 'data/data';
 
 const onGetForm = async (_, thunkAPI) => {
@@ -9,7 +8,8 @@ const onGetForm = async (_, thunkAPI) => {
     const data = mocData;
     // console.log(data.form);
     if (data.message) throw new Error(data.message);
-    return thunkAPI.fulfillWithValue(data.form);
+ 
+    return thunkAPI.fulfillWithValue(data[lang].form);
   } catch (error) {
     const /** @type {*} */ { message } = error;
     console.error(message);
