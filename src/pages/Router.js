@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { LoginPage } from './LoginPage';
+import { ShedulePage } from './ShedulePage';
 
 /**
  * @function Router
@@ -9,7 +10,8 @@ import { LoginPage } from './LoginPage';
 export const Router = () => {
   return (
     <Routes>
-      <Route path="/" element={<LoginPage />} />  
-    </Routes> 
+      <Route path="/" element={<LoginPage />} />
+      <Route path="/shedulepage" element={<ShedulePage />} />
+    </Routes>
   );
 };

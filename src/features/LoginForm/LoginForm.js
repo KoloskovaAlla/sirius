@@ -21,7 +21,7 @@ export const LoginForm = () => {
   const formState = useForm();
   const navigate = useNavigate();
 
-  useEffect(() => {    
+  useEffect(() => {
     dispatch(formState.formActions.getForm());
   }, [dispatch]);
 
@@ -49,7 +49,7 @@ export const LoginForm = () => {
 
   const onClickButton = (event) => {
     event.preventDefault();
-    navigate('/target-page'); // Replace '/target-page' with your desired route
+    navigate('/shedulepage'); // Replace '/target-page' with your desired route
   };
 
   return (
@@ -76,8 +76,8 @@ export const LoginForm = () => {
 
         {/* {!isValidField && <span>{invalidMessage}</span>} */}
       </label>
-  
-      <label className={classes.remember}>       
+
+      <label className={classes.remember}>
         <input
           type={'checkbox'}
           checked={formState.isChecked}
@@ -89,11 +89,11 @@ export const LoginForm = () => {
       </label>
       <button
         onClick={onClickButton}
-        className={classes.loginButton}
+        className={classes.submit}
         // disabled={disabled}
         type="submit"
-      > 
-        {'Войти'}        
+      >
+        {'Войти'}
       </button>
     </form>
   );
