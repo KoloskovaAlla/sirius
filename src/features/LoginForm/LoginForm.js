@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux';
 import { useForm } from 'shared/hooks';
 import { TextField } from 'entity';
 import { useNavigate } from 'react-router-dom';
+import { IconPasswordVisible } from 'shared/icons';
+
 
 import {
   validateEmail,
@@ -35,7 +37,7 @@ export const LoginForm = () => {
   // } = submitOptions;
 
   useEffect(() => {
-    console.log(formState.isValidEmail);
+    console.log(formState?.isPasswordVisible);
   }, [formState]);
 
   const onEmailChange = ({ target: { value } }) => {
@@ -55,6 +57,11 @@ export const LoginForm = () => {
   const onClickButton = (event) => {
     event.preventDefault();
     navigate('/shedulepage'); // Replace '/target-page' with your desired route
+  };
+
+  const togglePasswordVisibility = () => {
+    console.log('клик')
+    dispatch(formState?.formActions?.setIsPasswordVisible(!formState?.isPasswordVisible));
   };
 
   return (
@@ -78,6 +85,9 @@ export const LoginForm = () => {
           value={formState?.formData?.inputPassword.password}
           onChange={onPasswordChange}
         />
+        <button type="button" onClick={togglePasswordVisibility} className={classes.iconButton}>
+          {formState.isPasswordVisible ? <IconPasswordVisible /> : <IconPasswordVisible />}
+        </button>
 
         {/* {!isValidField && <span>{invalidMessage}</span>} */}
       </label>
