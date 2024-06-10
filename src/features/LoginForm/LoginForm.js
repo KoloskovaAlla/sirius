@@ -4,10 +4,9 @@ import { useDispatch } from 'react-redux';
 import { useForm } from 'shared/hooks';
 import { TextField } from 'entity';
 import { useNavigate } from 'react-router-dom';
+import { IconPasswordVisible, IconPasswordHidden } from 'shared/icons'; // Импортируем обе иконки
 
-import {
-  validateEmail,
-} from 'shared/utils';
+import { validateEmail } from 'shared/utils';
 
 // /**
 //  * @typedef {import('./types').FormProps} FormProps
@@ -24,18 +23,14 @@ export const LoginForm = () => {
   const dispatch = useDispatch();
   const formState = useForm();
   const navigate = useNavigate();
+  const [isPasswordVisible, setPasswordVisible] = useState(false);
 
   useEffect(() => {
     dispatch(formState.formActions.getForm());
   }, [dispatch]);
 
-  // const {
-  //   handleFormSubmit,
-  //   isSubmitDisabled,
-  // } = submitOptions;
-
   useEffect(() => {
-    console.log(formState.isValidEmail);
+    console.log(formState?.isPasswordVisible);
   }, [formState]);
 
   const onEmailChange = ({ target: { value } }) => {
@@ -45,7 +40,6 @@ export const LoginForm = () => {
 
   const onPasswordChange = ({ target: { value } }) => {
     dispatch(formState.formActions.setPassword(value));
-    // dispatch(formState.orderActions.setIsValidasworde(validatePassword(value)));
   };
 
   const handleCheckboxChange = () => {
@@ -57,34 +51,40 @@ export const LoginForm = () => {
     navigate('/shedulepage'); // Replace '/target-page' with your desired route
   };
 
+  const togglePasswordVisibility = () => {
+    console.log('клик');
+    setPasswordVisible(!isPasswordVisible);
+  };
+
   return (
     <form className={classes.form}>
-      {/* <label className={className}> */}
       <label className={classes.email}>
         <input
           type="text"
-          placeholder={formState?.formData?.inputEmail.placeholder}
+          placeholder={formState?.formData?.inputEmail?.placeholder}
           value={formState?.formData?.value}
           onChange={onEmailChange}
         />
-
-        {!formState.isValidEmail && <span>{formState?.formData?.inputEmail.invalidMessage}</span>}
+        {!formState.isValidEmail && <span>{formState?.formData?.inputEmail?.invalidMessage}</span>}
       </label>
 
       <label className={classes.password}>
-        <input
-          type="text"
-          placeholder={formState?.formData?.inputPassword.placeholder}
-          value={formState?.formData?.inputPassword.password}
-          onChange={onPasswordChange}
-        />
-
-        {/* {!isValidField && <span>{invalidMessage}</span>} */}
+        <div className={classes.passwordWrapper}>
+          <input
+            type={isPasswordVisible ? 'text' : 'password'}
+            placeholder={formState?.formData?.inputPassword?.placeholder}
+            value={formState?.formData?.inputPassword?.password}
+            onChange={onPasswordChange}
+          />
+          <button type="button" onClick={togglePasswordVisibility} className={classes.iconButton}>
+            {isPasswordVisible ? <IconPasswordVisible /> : <IconPasswordHidden />}
+          </button>
+        </div>
       </label>
 
       <label className={classes.remember}>
         <input
-          type={'checkbox'}
+          type="checkbox"
           checked={formState.isChecked}
           onChange={handleCheckboxChange}
         />
@@ -95,10 +95,9 @@ export const LoginForm = () => {
       <button
         onClick={onClickButton}
         className={classes.submit}
-        // disabled={disabled}
         type="submit"
       >
-        {'Войти'}
+        Войти
       </button>
     </form>
   );

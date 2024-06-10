@@ -36,6 +36,7 @@ const initialState = {
   isValidEmail: true,
   password: '',
   isValidPassword: false,
+  isPasswordVisible: false,
   isSubmitDisabled: true,
   isChecked: false,
 };
@@ -56,6 +57,9 @@ export const formSlice = createSlice({
     },
     setIsValidPassword: (state, { payload }) => {
       state.isValidPassword = payload;
+    },
+    setIsPasswordVisible: (state, { payload }) => {
+      state.isPasswordVisible = payload;
     },
     setIsSubmitDisabled: (state, { payload }) => {
       state.isSubmitDisabled = payload;
