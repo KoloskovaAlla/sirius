@@ -4,6 +4,8 @@ import { mocData } from 'data/data';
 
 const onGetForm = async (_, thunkAPI) => {
   try {
+    const /** @type {*} */ state = thunkAPI.getState();
+    const { lang } = state.langsReducer;
     const data = mocData;
     // console.log(data.form);
     if (data.message) throw new Error(data.message);
