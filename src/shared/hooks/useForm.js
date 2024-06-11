@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { formActions, getForm } from 'shared/reducers/formSlice';
 
 /**
- * @typedef {import('./types').RegistrationState} FormState
+ * @typedef {import('./types').FormState} FormState
  */
 
 /**
@@ -31,7 +31,7 @@ export const useForm = () => {
   // }, [isModalActive]);
 
   useEffect(() => {
-    const isFormDataValid = state.isValidEmail && state.isValidPassword 
+    const isFormDataValid = state.isValidEmail && state.isValidPassword
     dispatch(formActions.setIsSubmitDisabled(!isFormDataValid));
   }, [dispatch, state]);
 

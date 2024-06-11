@@ -33,8 +33,8 @@ export interface SubmitOptions {
 
 export interface FormProps {
   formOptions: {
-    emailOptions: EmailOptions;    
-    passwordOptions: PasswordOptions;    
+    emailOptions: EmailOptions;
+    passwordOptions: PasswordOptions;
     checkboxOptions: CheckboxOptions;
     submitOptions: SubmitOptions;
   };

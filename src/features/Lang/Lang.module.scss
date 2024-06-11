@@ -1,11 +1,12 @@
 .langs {
   margin-top: 50px;
-  display: flex; 
-  align-items: center;  
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
-.ru, .en { 
+.ru,
+.en {
   font-size: 20px;
   padding: 10px;
   text-align: center;
@@ -13,7 +14,8 @@
   transition: background-color 0.3s;
 }
 
-.ru:hover, .en:hover {
+.ru:hover,
+.en:hover {
   background: rgb(226, 224, 222);
 }
 

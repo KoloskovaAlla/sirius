@@ -5,8 +5,8 @@ import { Provider } from 'react-redux';
 import { store } from 'app';
 
 /** @typedef {import('react-dom/client').Root} Root */
-
 /** @type {Element | null} */
+
 const $root = document.querySelector('#root');
 
 if ($root) {

@@ -40,13 +40,13 @@
     height: 30px;
 
     input {
-      padding-right: 40px; // Добавим отступ, чтобы иконка не накладывалась на текст
+      padding-right: 40px;
     }
 
     .iconButton {
       position: absolute;
       right: 10px;
-      top: 50%; // Центрируем иконку по вертикали
+      top: 50%;
       transform: translateY(-50%);
       background: none;
       border: none;
