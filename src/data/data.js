@@ -17,9 +17,11 @@ export const mocData = {
       "type": "password\"",
       "invalidMessage": "Пароль не соответствует формату"
     },
-
+      "loginButton": {
+        "content": "Login",
+     },
     "title": {
-      "content": "Registration",
+      "content": "Login to Sirius Future",
       "priority": 3
     }
   },
@@ -41,8 +43,11 @@ export const mocData = {
       "type": "password\"",
       "invalidMessage": "Пароль не соответствует формату"
     }, 
+     "loginButton": {
+        "content": "Войти",
+     },
     "title": {
-      "content": "Регистрация аккаунта",
+      "content": "Вход в Sirius Future",
       "priority": 3
     }
   },} 
