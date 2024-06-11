@@ -12,8 +12,8 @@ import { classNames } from 'shared/utils';
 export const Lang = () => {
   const dispatch = useDispatch();
 
-  const { lang, langs, setLang } = useLang();
-      
+  const { lang, setLang } = useLang();
+
   const handleLangClick = (event) => {
     console.log(event.target.textContent)
     dispatch(setLang(event.target.textContent));
@@ -28,7 +28,7 @@ export const Lang = () => {
   });
 
 
- return (
+  return (
     <div className={classes.langs}>
       <div
         className={classNamesRu}

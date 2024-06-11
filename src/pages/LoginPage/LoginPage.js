@@ -1,6 +1,6 @@
 import classes from './LoginPage.module.scss';
-import { LoginForm, Lang } from 'features';
 import { Header } from 'widgets';
+import { LoginForm, Lang } from 'features';
 
 /**
  * @function LoginPage

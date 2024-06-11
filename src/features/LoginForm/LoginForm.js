@@ -1,22 +1,10 @@
 import classes from './LoginForm.module.scss';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useForm, useLang } from 'shared/hooks';
-import { TextField } from 'entity';
 import { useNavigate } from 'react-router-dom';
-import { IconPasswordVisible, IconPasswordHidden } from 'shared/icons'; // Импортируем обе иконки
+import { useForm, useLang } from 'shared/hooks';
+import { IconPasswordVisible, IconPasswordHidden } from 'shared/icons';
 import { validateEmail } from 'shared/utils';
-
-// /**
-//  * @typedef {import('./types').FormProps} FormProps
-//  * @typedef {import('react').ReactElement} Element
-//  */
-
-// /**
-//  * @function LoginForm
-//  * @param {FormProps} props
-//  * @returns {Element}
-//  */
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -44,7 +32,7 @@ export const LoginForm = () => {
 
   const onClickButton = (event) => {
     event.preventDefault();
-    navigate('/shedulepage'); // Replace '/target-page' with your desired route
+    navigate('/shedulepage');
   };
 
   const togglePasswordVisibility = () => {

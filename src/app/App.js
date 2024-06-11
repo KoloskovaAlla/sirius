@@ -1,7 +1,4 @@
 import './styles/index.scss';
-// import { useTheme } from 'shared/hooks';
-// import { Order, ErrorModal } from 'features';
-// import { Header, Footer, Clients, Posts } from 'widgets';
 import { Router } from 'pages';
 
 /**
@@ -10,7 +7,6 @@ import { Router } from 'pages';
  */
 
 export const App = () => {  
-
   return (
     <div className='app'>     
       <Router />  

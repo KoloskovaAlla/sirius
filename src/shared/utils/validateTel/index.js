@@ -1,1 +1,0 @@
-export { validateTel } from './validateTel';

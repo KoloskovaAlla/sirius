@@ -1,6 +1,6 @@
-import classes from './Header.module.scss'; 
+import classes from './Header.module.scss';
 import { IconLogoHeader } from 'shared/icons';
-import { useForm, useLang } from 'shared/hooks';
+import { useForm } from 'shared/hooks';
 
 export const Header = () => {
   const formState = useForm();
