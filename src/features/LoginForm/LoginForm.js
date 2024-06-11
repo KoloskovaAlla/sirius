@@ -17,6 +17,8 @@ export const LoginForm = () => {
     dispatch(formState.formActions.getForm());
   }, [dispatch, lang]);
 
+
+
   const onEmailChange = ({ target: { value } }) => {
     dispatch(formState.formActions.setEmail(value));
     dispatch(formState.formActions.setIsValidEmail(validateEmail(value)));
@@ -24,6 +26,7 @@ export const LoginForm = () => {
 
   const onPasswordChange = ({ target: { value } }) => {
     dispatch(formState.formActions.setPassword(value));
+    dispatch(formState.formActions.setIsValidPassword(true));
   };
 
   const handleCheckboxChange = () => {
@@ -36,9 +39,15 @@ export const LoginForm = () => {
   };
 
   const togglePasswordVisibility = () => {
-    console.log('клик');
     setPasswordVisible(!isPasswordVisible);
   };
+
+  // useEffect(() => {
+
+  //   console.log(formState?.isValidEmail)
+  //   console.log(formState?.isSubmitDisabled)
+  //   console.log('-----------------')
+  // }, [formState.isValidEmail, dispatch]);
 
   return (
     <form className={classes.form}>
@@ -80,6 +89,7 @@ export const LoginForm = () => {
         onClick={onClickButton}
         className={classes.submit}
         type="submit"
+        disabled={formState?.isSubmitDisabled}
       >
         {formState?.formData?.loginButton?.content}
       </button>
