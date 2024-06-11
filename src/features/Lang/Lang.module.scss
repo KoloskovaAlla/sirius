@@ -13,10 +13,10 @@
   transition: background-color 0.3s;
 }
 
-.ru:hover {
-  transform: scale(1.1);
+.ru:hover, .en:hover {
+  background: rgb(226, 224, 222);
 }
 
 .active {
-
+  transform: scale(1.3);
 }

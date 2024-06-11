@@ -93,7 +93,7 @@ export const LoginForm = () => {
         className={classes.submit}
         type="submit"
       >
-        Войти
+        {formState?.formData?.loginButton?.content}
       </button>
     </form>
   );
