@@ -1,7 +1,6 @@
 import classes from './Lang.module.scss';
 import { useDispatch } from 'react-redux';
 import { useLang } from 'shared/hooks';
-import { Select } from 'shared/ui';
 import { classNames } from 'shared/utils';
 
 /**
