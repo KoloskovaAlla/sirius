@@ -8,7 +8,7 @@ const onGetForm = async (_, thunkAPI) => {
     const data = mocData;
     // console.log(data.form);
     if (data.message) throw new Error(data.message);
- 
+
     return thunkAPI.fulfillWithValue(data[lang].form);
   } catch (error) {
     const /** @type {*} */ { message } = error;
@@ -41,6 +41,7 @@ const initialState = {
   isPasswordVisible: false,
   isSubmitDisabled: true,
   isChecked: false,
+  isFormValid: false,
 };
 
 export const formSlice = createSlice({
@@ -68,6 +69,9 @@ export const formSlice = createSlice({
     },
     setIsChecked: (state, { payload }) => {
       state.isChecked = payload;
+    },
+    setIsFormValid: (state, { payload }) => {
+      state.isFormValid = payload;
     },
   },
   extraReducers(builder) {

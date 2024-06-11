@@ -24,15 +24,12 @@ const getState = (store) => store.formReducer;
 export const useForm = () => {
   const dispatch = useDispatch();
   const state = useSelector(getState);
-  // const { isModalActive } = state;
 
-  // useEffect(() => {
-  //   localStorage.setItem('isModalActive', isModalActive);
-  // }, [isModalActive]);
 
   useEffect(() => {
     const isFormDataValid = state.isValidEmail && state.isValidPassword
     dispatch(formActions.setIsSubmitDisabled(!isFormDataValid));
+    console.log(state.isValidPassword)
   }, [dispatch, state]);
 
 
